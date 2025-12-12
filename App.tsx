@@ -4,17 +4,20 @@ import TalentSearch from './pages/TalentSearch';
 import JobPost from './pages/JobPost';
 import TalentOnboarding from './pages/TalentOnboarding';
 import Dashboard from './pages/Dashboard';
+import MobileBlocker from './components/MobileBlocker';
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<TalentSearch />} />
-        <Route path="/post-job" element={<JobPost />} />
-        <Route path="/talent-join" element={<TalentOnboarding />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-      </Routes>
-    </Router>
+    <MobileBlocker>
+      <Router>
+        <Routes>
+          <Route path="/" element={<TalentSearch />} />
+          <Route path="/post-job" element={<JobPost />} />
+          <Route path="/talent-join" element={<TalentOnboarding />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+        </Routes>
+      </Router>
+    </MobileBlocker>
   );
 }
 
